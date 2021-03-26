@@ -59,7 +59,35 @@ Conv, Pool 계층들을 통과시키다가 마지막에 FC(Fully Connected) 계�
 
 2. Object Localization & Landmark Detection
 
+Classification
+- 입력으로 주어진 이미지 안의 객체의 종류를 구분하는 행위
+
+Localization
+- 주어진 이미지 안의 객체가 이미지의 어느 위치에 있는지 위치 정보를 출력해주는 것
+- Bounding Box 를 많이 사용하며 픽셀 좌표가 아닌 left right top bottom 으로 출력된다
+
+Object Detection
+- 객체 검출은 보편적으로 Classification 과 Localization을 동시에 수행되는 것을 의미한다
+- 모델 학습 목적에 따라서 특정 객체만 검출하는 경우도 있고 여러개의 객체를 검출하는 경우도 있다
+- 이미지 위에 모델이 학습한 객체의 위치만 Bounding Box 로 표현된다
+
+Landmark Detection 
+- Bounding Box 를 쓰지않고 여러 개의 점(Landmark)을 찍는 방식이다
+
+Object Segmentation
+- OD를 통해 검출된 댇체의 형상을 따라서 영역을 표시하는 것이다
+- 각 픽셀을 classification 해서 결과 값을 도출한다
+- 단순히 foreground 와 background 를 구분하는 용도로 쓰이기도 한다
 
 3. Object Detection 알고리즘의 이해와 활용
+- ConvNets을 통한 Sliding Windows Detection Algorithm (computational cost 단점)
+- Bounding Box Predictions
+- Intersection Over Union
+- Non-max Suppression
+- Anchor Boxes
+- Region Proposals
+- R-CNN은 region proposal이라는 수백개의 이미지 후보를 생성하고 각각에 대해서 분류를 한다
+- YOLO는 격자 그리드로 나누어 한 번에 클래스를 판단하고 이를 통합해 최종 객체를 구분하며 동영상도 거의 실시간으로 동작할 만큼 빠른 속도를 자랑한다
+
 
 4. Generative Models 이해와 활용
