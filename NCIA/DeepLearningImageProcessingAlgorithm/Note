@@ -86,8 +86,19 @@ Object Segmentation
 - Non-max Suppression
 - Anchor Boxes
 - Region Proposals
+
+R-CNN
 - R-CNN은 region proposal이라는 수백개의 이미지 후보를 생성하고 각각에 대해서 분류를 한다
+- 후보로 뽑힌 부분들은 Classification network에 의해 분류가 이뤄지고 Bounding Box를 찾는다
+- 제안된 영역이 어떤 클래스인지 분류하기 위해서 많은 레이어들을 통과해야만 한다
+- Proposal 수도 많고 과정에서의 오버헤드도 크기때문에 느리다
+
+YOLO
 - YOLO는 격자 그리드로 나누어 한 번에 클래스를 판단하고 이를 통합해 최종 객체를 구분하며 동영상도 거의 실시간으로 동작할 만큼 빠른 속도를 자랑한다
+- 단 하나의 네트워크가 한번에 특징도 추출하고, Bounding Box도 만들고, 클래스고 분류한다
+- 경계 박스 안쪽에 어떤 오브젝트가 있을 것 같다고 확신이 들수록 박스는 굵게 그려진다
+- 굵은 경계 박스들만 남기고 NMS 알고리즘을 이용해 선별한다
+- 그리드 안에 오브젝트가 여러개 있으면 검출을 잘 못한다는 담점이 있지만 이건 YOLOv2 얘기이며 현재는 v4 까지 나오면서 성능은 좋아지고 있다
 
 
 4. Generative Models 이해와 활용
